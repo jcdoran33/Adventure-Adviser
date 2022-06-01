@@ -33,9 +33,22 @@ input {
     background-color: #e4976d;
 }
 
+
+/* Map */
+#map {
+    background-color: #e4976d;
+    height: 1vh;
+}
+
+
 /* Footer */
 .footer {
     background-color: #e4976d;
     text-align: center;
     top: 50px;
 }
+
+
+
+
+/* Responsive Layout Styles */
