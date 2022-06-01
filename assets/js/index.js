@@ -74,14 +74,13 @@ function apiFetchTm (latlon) {
 };
 
 function updateEventList (data) {
-  //want to update each event item in the list with the top event results use for loop
+  //want to update each event item in the list with the top event results (use for loop)
   for (var i=0 ; i <5; i++) {
     console.log("For loop run # " + i)
-    $("#events").children("ul").children().eq(i).text(data._embedded.events[i].name)
+    $("#events").children("ul").children().eq(i).text(data._embedded.events[i].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || Ticket Link:")
     console.log (data._embedded.events[i].name)
   }
-
-}
+};
 
 
 function showPosition(position) {
