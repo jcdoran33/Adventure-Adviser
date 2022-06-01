@@ -52,8 +52,18 @@ function apiFetchGeo (completeUrlStringG) {
 
 // step 2 - pass the coordinates into the ticketmaster API (showevents, addMarker, showPosition?, )
 function apiFetchTm (latlon) {
+  //first create new URL string that adds in the latlon coordinates
   var completeUrlStringTm = ticketMasterApiLink + latlon;
   console.log(completeUrlStringTm);
+  //now fetch form ticketmaster api
+  fetch(completeUrlStringTm)
+  .then(function(res) {
+    return res.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  })
+
 }
 
 function showPosition(position) {
