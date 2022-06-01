@@ -27,12 +27,20 @@ function getLocation () {
     var locationUrlString = userSearchLocation.replace(" ", "%20");
     //now new variable for complete URL
     var completeUrlString = googleMapsGeocodeApiLink + locationUrlString + googleMapsGeocodeApiKey
-    console.log(completeUrlString)
-
-
+    console.log(completeUrlString);
+    apiFetch(completeUrlString)
   })
 }
 // step 2 - pass the coordinates into the ticketmaster API (showevents, addMarker, showPosition?, )
+function apiFetch (completeUrlString) {
+  fetch(completeUrlString)
+    .then(function(res) {
+      return res.json()
+    })
+    .then(function(data) {
+      console.log(data)
+    })
+}
 
 
 function showPosition(position) {
