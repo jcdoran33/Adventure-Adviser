@@ -6,6 +6,13 @@ var googleMapsGeocodeApiLink = "https://maps.googleapis.com/maps/api/geocode/jso
 var googleMapsGeocodeApiKey = "&key=AIzaSyBjwEk24WO-R9Ad8hxTNUM4BvsIzH8fQDw";
 var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=";
 
+//event list items
+var eventOne = $("#event-one");
+var eventTwo = $("#event-two");
+var eventThree = $("#event-three");
+var eventFour = $("#event-four");
+var eventFive = $("#event-five");
+
 //comment out this function 
 // function getLocation() {
 //     if (navigator.geolocation) {
@@ -62,9 +69,20 @@ function apiFetchTm (latlon) {
   })
   .then(function(data) {
     console.log(data);
+    updateEventList(data)
   })
+};
+
+function updateEventList (data) {
+  //want to update each event item in the list with the top event results use for loop
+  for (var i=0 ; i <5; i++) {
+    console.log("For loop run # " + i)
+    $("#events").children("ul").children().eq(i).text(data._embedded.events[i].name)
+    console.log (data._embedded.events[i].name)
+  }
 
 }
+
 
 function showPosition(position) {
     var x = document.getElementById("location");
