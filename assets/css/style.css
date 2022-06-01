@@ -1,0 +1,8 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-image: url("assets/images/header.jpg");
+    background-size: auto;
+}
