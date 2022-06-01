@@ -55,6 +55,7 @@ function apiFetchGeo (completeUrlStringG) {
       var latlon = gLatitude + "," + gLongitude
       console.log(latlon);
       apiFetchTm(latlon);
+      showMap(gLatitude, gLongitude);
     })
 };
 
@@ -81,6 +82,7 @@ function updateEventList (data) {
     $("#events").children("ul").children("li").eq(i).html(data._embedded.events[i].name + " at " + data._embedded.events[i]._embedded.venues[0].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || <a href='"+data._embedded.events[i].url+"' target='_blank'>Ticket Link</a>")
     console.log (data._embedded.events[i].name)
   }
+  //removed show map from here
 };
 
 
@@ -134,17 +136,28 @@ function showEvents(json) {
   }
 }
 
-
-function initMap(position, json) {
-  var mapDiv = document.getElementById('map');
-  var map = new google.maps.Map(mapDiv, {
-    center: {lat: position.coords.latitude, lng: position.coords.longitude},
+// Jack's copy of the initMap function
+function showMap(gLatitude, gLongitude) {
+  var mapDiv = document.querySelector("#map");
+  console.log(gLatitude);
+  console.log(gLongitude);
+  var map = new google.maps.Map( mapDiv, {
+    center: {lat: gLatitude, lng: gLongitude},
     zoom: 10
   });
-  for(var i=0; i<json.page.size; i++) {
-    addMarker(map, json._embedded.events[i]);
-  }
 }
+
+//comment out old function initMap (replaced by our custom function above)
+// function initMap(position, json) {
+//   var mapDiv = document.getElementById('map');
+//   var map = new google.maps.Map(mapDiv, {
+//     center: {lat: position.coords.latitude, lng: position.coords.longitude},
+//     zoom: 10
+//   });
+//   for(var i=0; i<json.page.size; i++) {
+//     addMarker(map, json._embedded.events[i]);
+//   }
+// }
 
 function addMarker(map, event) {
   var marker = new google.maps.Marker({
