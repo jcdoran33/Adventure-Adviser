@@ -7,6 +7,7 @@
   <title>Adventure Adviser</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <script src="https://kit.fontawesome.com/0ad641d2c3.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
@@ -32,12 +33,12 @@
       </div>
     </div>
 
-    <!-- Fake map -->
+
     <div class="columns">
+      <!-- Map -->
       <div class="column is-4 is-offset-1">
         <br><br>
-        <div id="map">
-        </div>
+        <div id="map"></div>
         <br><br>
         <br><br>
       </div>
@@ -47,15 +48,20 @@
         <br><br>
         <ul>
           <!-- Text content of list items does not matter, they are placeholders for now-->
-          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-one">Event 1 - New Brunswick - 6/14/22 7:00 PM</li>
+          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-one">Event 1 - New Brunswick - 6/14/22
+            7:00 PM</li>
           <br>
-          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-two">Event 2 - New Brunswick - 6/14/22 7:00 PM</li>
+          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-two">Event 2 - New Brunswick - 6/14/22
+            7:00 PM</li>
           <br>
-          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-three">Event 3 - New Brunswick - 6/14/22 7:00 PM</li>
+          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-three">Event 3 - New Brunswick -
+            6/14/22 7:00 PM</li>
           <br>
-          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-four">Event 4 - New Brunswick - 6/14/22 7:00 PM</li>
+          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-four">Event 4 - New Brunswick - 6/14/22
+            7:00 PM</li>
           <br>
-          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-five">Event 5 - New Brunswick - 6/14/22 7:00 PM</li>
+          <li class="has-background-dark p-4 has-text-centered-mobile" id="event-five">Event 5 - New Brunswick - 6/14/22
+            7:00 PM</li>
         </ul>
         <br><br>
       </div>
@@ -74,5 +80,8 @@
   </footer>
 
 </body>
+
+<script src="./assets/js/index.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmUtkPFIztrMVdAlGTxNO8Tl8xKMV2xbg" async defer></script>
 
 </html>
