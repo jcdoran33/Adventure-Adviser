@@ -1,16 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  </head>
-  <body>
-    <p id="location">location there</p>
-    <div id="map"></div>
-    <div id="events"></div>
-    <script src="./assets/js/index.js"></script>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adventure Adviser</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/0ad641d2c3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+  <header class="bg-image level">
+    <h1 class="level-left has-text-weight-bold ml-6 pl-6">Adventure</h1>
+    <h1 class="level-right has-text-weight-bold mr-6 pr-6">Adviser</h1>
+  </header>
+
+
+  <main>
+    <div class="columns">
+
+      <!-- Search Bar -->
+      <div class="column is-10 is-offset-1 has-background-dark" id="search-column">
+        <form>
+          <h3>Type in the city you would like to attend an event in!</h3>
+          <input type="search" id="location">
+          <input type="submit" value="Submit!" id="submit-button">
+        </form>
+      </div>
+    </div>
+
+    <!-- Fake map -->
+    <div class="columns">
+      <div class="column is-4 is-offset-1" id="map">
+        <br><br>
+        <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/191:100/w_1280,c_limit/GoogleMapTA.jpg">
+        <br><br>
+        <br><br>
+      </div>
+
+      <!-- Event list -->
+      <div class="column is-5 is-offset-1" id="events">
+        <br><br>
+        <ul>
+          <!-- Text content of list items does not matter, they are placeholders for now-->
+          <li class="has-background-dark p-4" id="event-one">Event 1 - New Brunswick - 6/14/22 7:00 PM</li>
+          <br>
+          <li class="has-background-dark p-4" id="event-two">Event 2 - New Brunswick - 6/14/22 7:00 PM</li>
+          <br>
+          <li class="has-background-dark p-4" id="event-three">Event 3 - New Brunswick - 6/14/22 7:00 PM</li>
+          <br>
+          <li class="has-background-dark p-4" id="event-four">Event 4 - New Brunswick - 6/14/22 7:00 PM</li>
+          <br>
+          <li class="has-background-dark p-4" id="event-five">Event 5 - New Brunswick - 6/14/22 7:00 PM</li>
+        </ul>
+        <br><br>
+      </div>
+    </div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="footer is-relative">
+    <span class="icon-text">
+      <span>Enjoy your adventure!</span>
+      <span class="icon">
+        <i class="fa-solid fa-rocket"></i>
+      </span>
+    </span>
+  </footer>
+
+</body>
+<script src="./assets/js/index.js"></script>
     <!-- added my API key below -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmKqpxwrjP22boq6yiO_Neb05AUNR4fUI" async defer></script>
 
-  </body>
 </html>

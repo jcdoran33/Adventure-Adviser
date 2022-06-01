@@ -1,11 +1,40 @@
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        var x = document.getElementById("location");
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
+//global variables
+//var for the location search field input
+var searchField = document.querySelector("#location");
+//var to store the google maps api link
+var googleMapsGeocodeApiLink = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+var googleMapsGeocodeApiKey = "&key=AIzaSyBjwEk24WO-R9Ad8hxTNUM4BvsIzH8fQDw"
+
+//comment out this function 
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(showPosition, showError);
+//     } else {
+//         var x = document.getElementById("location");
+//         x.innerHTML = "Geolocation is not supported by this browser.";
+//     }
+// }
+
+//creating alternate getLocation function that gets user location from search input instead of brower's location
+//step1 - convert user search input to lat/lng coordinates
+function getLocation () {
+  $("#submit-button").click(function(event) {
+    event.preventDefault();
+    var userSearchLocation = searchField.value;
+    console.log(userSearchLocation);
+    //pass into geocode API
+    //first convert user search into format that works for URL - convert space to %20
+    var locationUrlString = userSearchLocation.replace(" ", "%20");
+    //now new variable for complete URL
+    var completeUrlString = googleMapsGeocodeApiLink + locationUrlString + googleMapsGeocodeApiKey
+    console.log(completeUrlString)
+
+
+  })
 }
+// step 2 - pass the coordinates into the ticketmaster API (showevents, addMarker, showPosition?, )
+
+
 function showPosition(position) {
     var x = document.getElementById("location");
     x.innerHTML = "Latitude: " + position.coords.latitude + 
