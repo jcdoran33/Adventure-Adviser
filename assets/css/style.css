@@ -3,3 +3,44 @@
     height: 400px;
   }
 
+  /* General Styles */
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+header {
+  height: 200px;
+}
+
+h1 {
+  color: white;
+  font-size: 5vw;
+}
+
+form {
+  text-align: center;
+  color: white;
+}
+
+input {
+  color: black;
+}
+
+
+/* Custom Classes & Ids */
+/* Header */
+.bg-image {
+  background-image: url(https://images.unsplash.com/photo-1653984335295-871bcc9fd48c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+  background-position: center 53%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #e4976d;
+}
+
+/* Footer */
+.footer {
+  background-color: #e4976d;
+  text-align: center;
+  top: 50px;
+}
