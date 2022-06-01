@@ -39,6 +39,10 @@ function apiFetch (completeUrlString) {
     })
     .then(function(data) {
       console.log(data)
+      var gLatitude = data.results[0].geometry.location.lat;
+      var gLongitude = data.results[0].geometry.location.lng;
+      console.log(gLatitude);
+      console.log(gLongitude);
     })
 }
 
