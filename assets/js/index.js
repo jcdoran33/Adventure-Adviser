@@ -3,7 +3,8 @@
 var searchField = document.querySelector("#location");
 //var to store the google maps api link
 var googleMapsGeocodeApiLink = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-var googleMapsGeocodeApiKey = "&key=AIzaSyBjwEk24WO-R9Ad8hxTNUM4BvsIzH8fQDw"
+var googleMapsGeocodeApiKey = "&key=AIzaSyBjwEk24WO-R9Ad8hxTNUM4BvsIzH8fQDw";
+var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=";
 
 //comment out this function 
 // function getLocation() {
@@ -26,14 +27,14 @@ function getLocation () {
     //first convert user search into format that works for URL - convert space to %20
     var locationUrlString = userSearchLocation.replace(" ", "%20");
     //now new variable for complete URL
-    var completeUrlString = googleMapsGeocodeApiLink + locationUrlString + googleMapsGeocodeApiKey
-    console.log(completeUrlString);
-    apiFetch(completeUrlString)
+    var completeUrlStringG = googleMapsGeocodeApiLink + locationUrlString + googleMapsGeocodeApiKey
+    console.log(completeUrlStringG);
+    apiFetchGeo(completeUrlStringG)
   })
-}
-// step 2 - pass the coordinates into the ticketmaster API (showevents, addMarker, showPosition?, )
-function apiFetch (completeUrlString) {
-  fetch(completeUrlString)
+};
+
+function apiFetchGeo (completeUrlStringG) {
+  fetch(completeUrlStringG)
     .then(function(res) {
       return res.json()
     })
@@ -43,9 +44,17 @@ function apiFetch (completeUrlString) {
       var gLongitude = data.results[0].geometry.location.lng;
       console.log(gLatitude);
       console.log(gLongitude);
+      var latlon = gLatitude + "," + gLongitude
+      console.log(latlon);
+      apiFetchTm(latlon);
     })
-}
+};
 
+// step 2 - pass the coordinates into the ticketmaster API (showevents, addMarker, showPosition?, )
+function apiFetchTm (latlon) {
+  var completeUrlStringTm = ticketMasterApiLink + latlon;
+  console.log(completeUrlStringTm);
+}
 
 function showPosition(position) {
     var x = document.getElementById("location");
