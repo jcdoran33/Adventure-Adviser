@@ -4,7 +4,8 @@ var searchField = document.querySelector("#location");
 //var to store the google maps api link
 var googleMapsGeocodeApiLink = "https://maps.googleapis.com/maps/api/geocode/json?address=";
 var googleMapsGeocodeApiKey = "&key=AIzaSyBjwEk24WO-R9Ad8hxTNUM4BvsIzH8fQDw";
-var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=";
+var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?sort=distance,date,asc&startDateTime=2022-06-01T00:00:00Z&apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=";
+// og ticketmaster URL https://app.ticketmaster.com/discovery/v2/events.json?apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=
 
 //event list items
 var eventOne = $("#event-one");
@@ -75,9 +76,9 @@ function apiFetchTm (latlon) {
 
 function updateEventList (data) {
   //want to update each event item in the list with the top event results (use for loop)
-  for (var i=0 ; i <5; i++) {
+  for (var i = 0 ; i < 5; i++) {
     console.log("For loop run # " + i)
-    $("#events").children("ul").children().eq(i).text(data._embedded.events[i].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || Ticket Link:")
+    $("#events").children("ul").children("li").eq(i).text(data._embedded.events[i].name + " at " + data._embedded.events[i]._embedded.venues[0].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || Ticket Link:")
     console.log (data._embedded.events[i].name)
   }
 };
