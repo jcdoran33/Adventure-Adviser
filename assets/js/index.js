@@ -137,7 +137,7 @@ function showEvents(json) {
 }
 
 // Jack's copy of the initMap function
-function showMap(gLatitude, gLongitude) {
+function showMap(gLatitude, gLongitude, data) {
   var mapDiv = document.querySelector("#map");
   console.log(gLatitude);
   console.log(gLongitude);
@@ -145,6 +145,12 @@ function showMap(gLatitude, gLongitude) {
     center: {lat: gLatitude, lng: gLongitude},
     zoom: 10
   });
+  
+  for (var i = 0; i < document.getElementById("events").childElementCount; i++) {
+    console.log("Marker loop run # " + i);
+    console.log(data._embedded.events[i]);
+    addMarker(map, data._embedded.events[i]);
+  }
 }
 
 //comment out old function initMap (replaced by our custom function above)
@@ -167,7 +173,6 @@ function addMarker(map, event) {
   marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
   console.log(marker);
 }
-
 
 
 
