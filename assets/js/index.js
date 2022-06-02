@@ -9,7 +9,7 @@ var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json
 
 var map = document.getElementById("map");
 
-//event list items
+//event list items - these can be removed
 var eventOne = $("#event-one");
 var eventTwo = $("#event-two");
 var eventThree = $("#event-three");
@@ -81,7 +81,7 @@ function apiFetchTm (latlon) {
 
 function updateEventList (data) {
   //want to update each event item in the list with the top event results (use for loop)
-  for (var i = 0 ; i < 10; i++) {
+  for (var i = 0 ; i < 20; i++) {
     console.log("For loop run # " + i)
     $("#events").children("ul").children("li").eq(i).html(data._embedded.events[i].name + " at " + data._embedded.events[i]._embedded.venues[0].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || <a href='"+data._embedded.events[i].url+"' target='_blank'>Ticket Link</a>")
     console.log (data._embedded.events[i].name)
@@ -166,7 +166,7 @@ function placeMarkers(data) {
     zoom: 10
   });
 
-  for (var i = 0; i < document.getElementById("events").childElementCount; i++) {
+  for (var i = 0; i < 20; i++) {
     console.log("Marker loop run # " + i);
     console.log(data._embedded.events[i]);
     // var myLatLng = {lat: data._embedded.events[i]._embedded.venues[0].location.latitude, lng: data._embedded.events[i]._embedded.venues[0].location.longitude};
@@ -196,6 +196,7 @@ function placeMarkers(data) {
 //   }
 // }
 
+//ignore below function - not used
 function addMarker(map, event) {
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
