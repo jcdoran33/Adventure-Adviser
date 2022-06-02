@@ -28,6 +28,7 @@ var eventFive = $("#event-five");
 
 //creating alternate getLocation function that gets user location from search input instead of brower's location
 //step1 - convert user search input to lat/lng coordinates
+
 function getLocation () {
   $("#submit-button").click(function(event) {
     event.preventDefault();
@@ -80,7 +81,7 @@ function apiFetchTm (latlon) {
 
 function updateEventList (data) {
   //want to update each event item in the list with the top event results (use for loop)
-  for (var i = 0 ; i < 5; i++) {
+  for (var i = 0 ; i < 10; i++) {
     console.log("For loop run # " + i)
     $("#events").children("ul").children("li").eq(i).html(data._embedded.events[i].name + " at " + data._embedded.events[i]._embedded.venues[0].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || <a href='"+data._embedded.events[i].url+"' target='_blank'>Ticket Link</a>")
     console.log (data._embedded.events[i].name)
@@ -162,6 +163,7 @@ function placeMarkers(data, map) {
       position: myLatLng,
       map: map,
       title: "Hello World!",
+      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
     });
     // marker.setMap(map) // this is not working
   }
