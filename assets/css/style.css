@@ -1,34 +1,34 @@
-#map {
-    width: 500px;
-    height: 400px;
-    margin-top: 20px;
-  }
-
-  /* General Styles */
+/* General Styles */
 * {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
 }
 
 header {
-  height: 200px;
+    height: 200px;
 }
 
 h1 {
-  color: white;
-  font-size: 5vw;
+    color: white;
+    font-size: 5vw;
+}
+
+p {
+    color: black;
+    text-align: center;
 }
 
 form {
-  text-align: center;
-  color: white;
+    text-align: center;
+    color: white;
 }
 
 input {
-  color: black;
+    color: black;
 }
 
-/* Ticket Link */
+
+    /* Ticket Link */
 a{
     color: white;
     border: 1px white solid;
@@ -41,10 +41,30 @@ a:hover {
     color: black;
 }
 
+
+
+/* Custom Classes & Ids */
+/* Header */
+.bg-image {
+    background-image: url(https://images.unsplash.com/photo-1653984335295-871bcc9fd48c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    background-position: center 53%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #e4976d;
+}
+
+
+/* Map */
+#map {
+    background-color: #e4976d;
+    min-height: 500px;
+}
+
+
 /* Added Scroll Bar on Hover */
 #events {
     margin-top: 20px;
-    max-height: 500px;
+    max-height: 300px;
     overflow: hidden;
 }
 
@@ -52,19 +72,10 @@ a:hover {
     overflow-y: scroll;   
 }
 
-/* Custom Classes & Ids */
-/* Header */
-.bg-image {
-  background-image: url(https://images.unsplash.com/photo-1653984335295-871bcc9fd48c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
-  background-position: center 53%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-color: #e4976d;
-}
 
 /* Footer */
 .footer {
-  background-color: #e4976d;
-  text-align: center;
-  top: 50px;
+    background-color: #e4976d;
+    text-align: center;
+    top: 50px;
 }
