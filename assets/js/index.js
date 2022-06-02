@@ -4,7 +4,10 @@ var searchField = document.querySelector("#location");
 //var to store the google maps api link
 var googleMapsGeocodeApiLink = "https://maps.googleapis.com/maps/api/geocode/json?address=";
 var googleMapsGeocodeApiKey = "&key=AIzaSyBjwEk24WO-R9Ad8hxTNUM4BvsIzH8fQDw";
-var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=";
+var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?sort=distance,date,asc&startDateTime=2022-06-01T00:00:00Z&apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=";
+// og ticketmaster URL https://app.ticketmaster.com/discovery/v2/events.json?apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=
+
+var map = document.getElementById("map");
 
 //event list items
 var eventOne = $("#event-one");
@@ -54,6 +57,7 @@ function apiFetchGeo (completeUrlStringG) {
       var latlon = gLatitude + "," + gLongitude
       console.log(latlon);
       apiFetchTm(latlon);
+      showMap(gLatitude, gLongitude);
     })
 };
 
@@ -69,17 +73,19 @@ function apiFetchTm (latlon) {
   })
   .then(function(data) {
     console.log(data);
-    updateEventList(data)
+    updateEventList(data);
+    placeMarkers(data);
   })
 };
 
 function updateEventList (data) {
   //want to update each event item in the list with the top event results (use for loop)
-  for (var i = 0 ; i < 10; i++) {
+  for (var i = 0 ; i < 20; i++) {
     console.log("For loop run # " + i)
-    $("#events").children("ul").children("li").eq(i).html(data._embedded.events[i].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || <a href='"+data._embedded.events[i].url+"' target='_blank'>Ticket Link</a>")
+    $("#events").children("ul").children("li").eq(i).html(data._embedded.events[i].name + " at " + data._embedded.events[i]._embedded.venues[0].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || <a href='"+data._embedded.events[i].url+"' target='_blank'>TicketMaster</a>")
     console.log (data._embedded.events[i].name)
   }
+  //removed show map from here
 };
 
 
@@ -133,17 +139,45 @@ function showEvents(json) {
   }
 }
 
-
-function initMap(position, json) {
-  var mapDiv = document.getElementById('map');
-  var map = new google.maps.Map(mapDiv, {
-    center: {lat: position.coords.latitude, lng: position.coords.longitude},
+// Jack's copy of the initMap function
+function showMap(gLatitude, gLongitude) {
+  var mapDiv = document.querySelector("#map");
+  var map = new google.maps.Map( mapDiv, {
+    center: {lat: gLatitude, lng: gLongitude},
     zoom: 10
   });
-  for(var i=0; i<json.page.size; i++) {
-    addMarker(map, json._embedded.events[i]);
-  }
 }
+
+//moving this loop out of the showMap function
+//creating new function to replace others (addMarker)
+function placeMarkers(data, map) {
+  for (var i = 0; i < document.getElementById("events").childElementCount; i++) {
+    console.log("Marker loop run # " + i);
+    console.log(data._embedded.events[i]);
+    // var myLatLng = {lat: data._embedded.events[i]._embedded.venues[0].location.latitude, lng: data._embedded.events[i]._embedded.venues[0].location.longitude};
+    var myLatLng = {lat: JSON.parse(data._embedded.events[i]._embedded.venues[0].location.latitude), lng: JSON.parse(data._embedded.events[i]._embedded.venues[0].location.longitude)};
+    console.log(myLatLng);
+    console.log(map);
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: "Hello World!",
+    });
+    // marker.setMap(map) // this is not working
+  }
+};
+
+//comment out old function initMap (replaced by our custom function above)
+// function initMap(position, json) {
+//   var mapDiv = document.getElementById('map');
+//   var map = new google.maps.Map(mapDiv, {
+//     center: {lat: position.coords.latitude, lng: position.coords.longitude},
+//     zoom: 10
+//   });
+//   for(var i=0; i<json.page.size; i++) {
+//     addMarker(map, json._embedded.events[i]);
+//   }
+// }
 
 function addMarker(map, event) {
   var marker = new google.maps.Marker({
@@ -153,5 +187,7 @@ function addMarker(map, event) {
   marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
   console.log(marker);
 }
+
+
 
 getLocation();
