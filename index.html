@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adventure Adviser</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/0ad641d2c3.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="bg-image level is-mobile">
+    <h1 class="level-left has-text-weight-bold ml-6" id="adventure">Adventure</h1>
+    <h1 class="level-right has-text-weight-bold mr-6" id="adviser">Adviser</h1>
+  </header>
+
+
+  <main>
+    <div class="columns">
+
+      <!-- Search Bar -->
+      <div class="column is-10 is-offset-1 has-background-dark" id="search-column">
+        <form>
+          <h3>Type in the city you would like to attend an event in!</h3>
+          <input type="search" id="location">
+          <input type="submit" value="Submit!" id="submit-button">
+        </form>
+      </div>
+    </div>
+
+
+    <div class="columns">
+      <!-- Map -->
+      <div class="column is-4 is-offset-1">
+
+        <div class="box" id="map">
+        </div>
+
+      </div>
+
+      <!-- Event list -->
+      <div class="column is-5 is-offset-1" id="events">
+
+        <p class="mb-6">You can scroll down directly on the events to reveal more!</p> 
+
+        <ul>
+          <!-- Each Event-->
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-one"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-two"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-three"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-four"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-five"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-six"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-seven"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eight"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-nine"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-ten"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eleven"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-twelve"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-thirteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-fourteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-fifteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-sixteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-seventeen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eighteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-nineteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-twenty"></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="footer is-relative">
+    <span class="icon-text">
+      <span>Enjoy your adventure!</span>
+      <span class="icon">
+        <i class="fa-solid fa-rocket"></i>
+      </span>
+    </span>
+  </footer>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+<script src="./assets/js/index.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmUtkPFIztrMVdAlGTxNO8Tl8xKMV2xbg" async defer></script>
+
+
+</html>
