@@ -142,29 +142,44 @@ function showEvents(json) {
 
 // Jack's copy of the initMap function
 function showMap(gLatitude, gLongitude) {
+  console.log(gLatitude, gLongitude);
   var mapDiv = document.querySelector("#map");
   var map = new google.maps.Map( mapDiv, {
     center: {lat: gLatitude, lng: gLongitude},
     zoom: 10
   });
+  
+  new google.maps.Marker({
+    position: {lat: gLatitude, lng: gLongitude},
+    map,
+    title: "Hello extra test!"
+  })
 }
 
 //moving this loop out of the showMap function
 //creating new function to replace others (addMarker)
-function placeMarkers(data, map) {
+function placeMarkers(data) {
+  console.log("placeMarkers");
+  var mapDiv = document.querySelector("#map");
+  var map = new google.maps.Map( mapDiv, {
+    center: {lat: JSON.parse(data._embedded.events[0]._embedded.venues[0].location.latitude), lng: JSON.parse(data._embedded.events[0]._embedded.venues[0].location.longitude)},
+    zoom: 10
+  });
+
   for (var i = 0; i < document.getElementById("events").childElementCount; i++) {
     console.log("Marker loop run # " + i);
     console.log(data._embedded.events[i]);
     // var myLatLng = {lat: data._embedded.events[i]._embedded.venues[0].location.latitude, lng: data._embedded.events[i]._embedded.venues[0].location.longitude};
     var myLatLng = {lat: JSON.parse(data._embedded.events[i]._embedded.venues[0].location.latitude), lng: JSON.parse(data._embedded.events[i]._embedded.venues[0].location.longitude)};
     console.log(myLatLng);
-    console.log(map);
-    var marker = new google.maps.Marker({
-      position: myLatLng,
-      map: map,
-      title: "Hello World!",
-      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-    });
+    console.log("Venue: ", data._embedded.events[i]._embedded.venues)
+    // var map = document.getElementById("map");
+  
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello test!"
+  })
     // marker.setMap(map) // this is not working
   }
 };
