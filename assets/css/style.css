@@ -57,14 +57,14 @@ a:hover {
 /* Map */
 #map {
     background-color: #e4976d;
-    height: 1vh;
+    min-height: 500px;
 }
 
 
 /* Added Scroll Bar on Hover */
 #events {
     margin-top: 20px;
-    max-height: 500px;
+    max-height: 300px;
     overflow: hidden;
 }
 
