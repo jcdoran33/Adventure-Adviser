@@ -13,6 +13,11 @@ h1 {
     font-size: 5vw;
 }
 
+p {
+    color: black;
+    text-align: center;
+}
+
 form {
     text-align: center;
     color: white;
@@ -21,6 +26,21 @@ form {
 input {
     color: black;
 }
+
+
+    /* Ticket Link */
+a{
+    color: white;
+    border: 1px white solid;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+}
+
 
 
 /* Custom Classes & Ids */
@@ -41,24 +61,21 @@ input {
 }
 
 
+/* Added Scroll Bar on Hover */
+#events {
+    margin-top: 20px;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+#events:hover {
+    overflow-y: scroll;   
+}
+
+
 /* Footer */
 .footer {
     background-color: #e4976d;
     text-align: center;
     top: 50px;
 }
-
-
-
-
-/* Responsive Layout Styles */
-
-
-/* @media screen and (max-width: 768px) {
-
-    h1 {
-        font-size: 6vw;
-    }
-
-
-} */
