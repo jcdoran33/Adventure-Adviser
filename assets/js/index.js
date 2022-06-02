@@ -7,6 +7,8 @@ var googleMapsGeocodeApiKey = "&key=AIzaSyBjwEk24WO-R9Ad8hxTNUM4BvsIzH8fQDw";
 var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?sort=distance,date,asc&startDateTime=2022-06-01T00:00:00Z&apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=";
 // og ticketmaster URL https://app.ticketmaster.com/discovery/v2/events.json?apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=
 
+var map = document.getElementById("map");
+
 //event list items
 var eventOne = $("#event-one");
 var eventTwo = $("#event-two");
@@ -71,7 +73,8 @@ function apiFetchTm (latlon) {
   })
   .then(function(data) {
     console.log(data);
-    updateEventList(data)
+    updateEventList(data);
+    placeMarkers(data);
   })
 };
 
@@ -137,21 +140,32 @@ function showEvents(json) {
 }
 
 // Jack's copy of the initMap function
-function showMap(gLatitude, gLongitude, data) {
+function showMap(gLatitude, gLongitude) {
   var mapDiv = document.querySelector("#map");
-  console.log(gLatitude);
-  console.log(gLongitude);
   var map = new google.maps.Map( mapDiv, {
     center: {lat: gLatitude, lng: gLongitude},
     zoom: 10
   });
-  
+}
+
+//moving this loop out of the showMap function
+//creating new function to replace others (addMarker)
+function placeMarkers(data, map) {
   for (var i = 0; i < document.getElementById("events").childElementCount; i++) {
     console.log("Marker loop run # " + i);
     console.log(data._embedded.events[i]);
-    addMarker(map, data._embedded.events[i]);
+    // var myLatLng = {lat: data._embedded.events[i]._embedded.venues[0].location.latitude, lng: data._embedded.events[i]._embedded.venues[0].location.longitude};
+    var myLatLng = {lat: JSON.parse(data._embedded.events[i]._embedded.venues[0].location.latitude), lng: JSON.parse(data._embedded.events[i]._embedded.venues[0].location.longitude)};
+    console.log(myLatLng);
+    console.log(map);
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: "Hello World!",
+    });
+    // marker.setMap(map) // this is not working
   }
-}
+};
 
 //comment out old function initMap (replaced by our custom function above)
 // function initMap(position, json) {
