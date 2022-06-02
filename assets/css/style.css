@@ -27,6 +27,29 @@ input {
   color: black;
 }
 
+/* Ticket Link */
+a{
+    color: white;
+    border: 1px white solid;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Added Scroll Bar on Hover */
+#events {
+    margin-top: 20px;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+#events:hover {
+    overflow-y: scroll;   
+}
 
 /* Custom Classes & Ids */
 /* Header */

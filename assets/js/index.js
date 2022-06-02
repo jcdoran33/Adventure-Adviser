@@ -75,7 +75,7 @@ function apiFetchTm (latlon) {
 
 function updateEventList (data) {
   //want to update each event item in the list with the top event results (use for loop)
-  for (var i = 0 ; i < 5; i++) {
+  for (var i = 0 ; i < 10; i++) {
     console.log("For loop run # " + i)
     $("#events").children("ul").children("li").eq(i).html(data._embedded.events[i].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || <a href='"+data._embedded.events[i].url+"' target='_blank'>Ticket Link</a>")
     console.log (data._embedded.events[i].name)
