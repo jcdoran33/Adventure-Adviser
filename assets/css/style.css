@@ -42,7 +42,6 @@ a:hover {
 }
 
 
-
 /* Custom Classes & Ids */
 /* Header */
 .bg-image {
@@ -64,7 +63,7 @@ a:hover {
 /* Added Scroll Bar on Hover */
 #events {
     margin-top: 20px;
-    max-height: 500px;
+    max-height: 1115px;
     overflow: hidden;
 }
 
@@ -73,9 +72,22 @@ a:hover {
 }
 
 
+/* Hides everything below the submit button besides the footer */
+#below-submit {
+    display: none;
+}
+
 /* Footer */
 .footer {
     background-color: #e4976d;
     text-align: center;
     top: 50px;
+}
+
+#orange {
+    background-color: #e4976d;
+}
+
+.hero {
+    display: block;
 }
