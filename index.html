@@ -6,17 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adventure Adviser</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/0ad641d2c3.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
 <body>
 
-  <header class="bg-image level">
-    <h1 class="level-left has-text-weight-bold ml-6 pl-6">Adventure</h1>
-    <h1 class="level-right has-text-weight-bold mr-6 pr-6">Adviser</h1>
+  <!-- Header -->
+  <header class="bg-image level is-mobile">
+    <h1 class="level-left has-text-weight-bold ml-6" id="adventure">Adventure</h1>
+    <h1 class="level-right has-text-weight-bold mr-6" id="adviser">Adviser</h1>
   </header>
 
 
@@ -33,67 +34,56 @@
       </div>
     </div>
 
-    <!-- Fake map -->
+
     <div class="columns">
-      <div class="column is-4 is-offset-1" id="map">
-        <br><br>
-        <img src=>
-        <br><br>
-        <br><br>
+      <!-- Map -->
+      <div class="column is-4 is-offset-1">
+
+        <div class="box" id="map">
+        </div>
+
+        <p class="mb-1">Weather in this city!</p>
+        <div class="box" id="weather-one"></div>
+        <div class="box" id="weather-two"></div>
+        <div class="box" id="weather-three"></div>
+        <div class="box" id="weather-four"></div>
+        <div class="box" id="weather-five"></div>
       </div>
 
       <!-- Event list -->
       <div class="column is-5 is-offset-1" id="events">
 
-        <br><br>
+        <p class="mb-6">You can scroll down directly on the events to reveal more!</p> 
+
         <ul>
-          <li class="has-background-dark p-4" id="event-one">Event 1 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-two">Event 2 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-three">Event 3 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-four">Event 4 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-five">Event 5 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-six">Event 6 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-seven">Event 7 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-eight">Event 8 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-nine">Event 9 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-ten">Event 10 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-eleven">Event 11 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-twelve">Event 12 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-thriteen">Event 13 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-fourteen">Event 14 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-fifteen">Event 15 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-sixteen">Event 16 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-seventeen">Event 17 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-eighteen">Event 18 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-nineteen">Event 19 - New Brunswick - 6/14/22 7:00 PM</li>
-          <br>
-          <li class="has-background-dark p-4" id="event-twenty">Event 20 - New Brunswick - 6/14/22 7:00 PM</li>
+          <!-- Each Event-->
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-one"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-two"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-three"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-four"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-five"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-six"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-seven"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eight"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-nine"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-ten"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eleven"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-twelve"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-thirteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-fourteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-fifteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-sixteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-seventeen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eighteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-nineteen"></li>
+          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-twenty"></li>
         </ul>
-        <br><br>
       </div>
     </div>
   </main>
 
-  
 
+  <!-- Footer -->
   <footer class="footer is-relative">
     <span class="icon-text">
       <span>Enjoy your adventure!</span>
@@ -104,8 +94,10 @@
   </footer>
 
 </body>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
 <script src="./assets/js/index.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmKqpxwrjP22boq6yiO_Neb05AUNR4fUI" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmUtkPFIztrMVdAlGTxNO8Tl8xKMV2xbg" async defer></script>
+
 
 </html>

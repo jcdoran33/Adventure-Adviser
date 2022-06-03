@@ -46,6 +46,7 @@ function apiFetchGeo (completeUrlStringG) {
       console.log(latlon);
       apiFetchTm(latlon);
       showMap(gLatitude, gLongitude);
+      weatherApi(gLatitude, gLongitude);
     })
 };
 
@@ -117,5 +118,17 @@ function placeMarkers(data) {
   })
   }
 };
+
+function weatherApi (gLatitude, gLongitude) {
+  console.log("Weather API fetch function called");
+  fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+ gLatitude + "&lon=" + gLongitude + "&appid=ccd6639ee8a0a85c2ab586d91cfb5a8a&units=imperial")
+  .then(function(res){
+    return res.json();
+  })
+  .then(function(data) {
+    console.log(data);
+
+  })
+}
 
 getLocation();
