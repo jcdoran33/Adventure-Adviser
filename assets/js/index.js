@@ -127,6 +127,14 @@ function weatherApi (gLatitude, gLongitude) {
   })
   .then(function(data) {
     console.log(data);
+    //use for loop to...
+    for (var i=0; i< 5; i++) {
+    //display date
+    $("#weather").children().eq(1+i).html(moment().add(i,'d').format("MM/DD/YY"));
+    //display weather icon
+    //display temperature
+
+    }
 
   })
 }
