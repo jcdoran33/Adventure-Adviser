@@ -130,10 +130,9 @@ function weatherApi (gLatitude, gLongitude) {
     //use for loop to...
     for (var i=0; i< 5; i++) {
     //display date
-    $("#weather").children().eq(1+i).html(moment().add(i,'d').format("MM/DD/YY"));
+    $("#weather").children().eq(1+i).html(moment().add(i,'d').format("MM/DD/YY") + "<img src='http://openweathermap.org/img/wn/" +data.daily[i].weather[0].icon+ ".png' > "+data.daily[i].temp.day+" F");
     //display weather icon
     //display temperature
-
     }
 
   })
