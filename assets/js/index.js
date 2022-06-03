@@ -63,7 +63,7 @@ function updateEventList (data) {
   //want to update each event item in the list with the top event results (use for loop)
   for (var i = 0 ; i < 20; i++) {
     console.log("For loop run # " + i)
-    $("#events").children("ul").children("li").eq(i).html(data._embedded.events[i].name + " at " + data._embedded.events[i]._embedded.venues[0].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || <a href='"+data._embedded.events[i].url+"' target='_blank'>Ticket Link</a>")
+    $("#events").children("ul").children("li").eq(i).html(data._embedded.events[i].name + " at " + data._embedded.events[i]._embedded.venues[0].name + " || " + data._embedded.events[i].dates.start.localDate + " || Start time: " + data._embedded.events[i].dates.start.localTime + " || <a href='"+data._embedded.events[i].url+"' target='_blank'>Ticket Master</a>")
     console.log (data._embedded.events[i].name)
   }
 };
