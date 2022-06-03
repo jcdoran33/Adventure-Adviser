@@ -34,52 +34,53 @@
       </div>
     </div>
 
+    <div id="below-submit">
+      <div class="columns">
+        <!-- Map -->
+        <div class="column is-4 is-offset-1">
 
-    <div class="columns">
-      <!-- Map -->
-      <div class="column is-4 is-offset-1">
+          <div class="box" id="map">
+          </div>
 
-        <div class="box" id="map">
+          <div id="weather">
+            <p class="mb-1">Weather in this city!</p>
+            <div class="box has-text-centered" id="weather-one"></div>
+            <div class="box has-text-centered	" id="weather-two"></div>
+            <div class="box has-text-centered	" id="weather-three"></div>
+            <div class="box has-text-centered	" id="weather-four"></div>
+            <div class="box has-text-centered	" id="weather-five"></div>
+          </div>
         </div>
 
-        <div id="weather">
-          <p class="mb-1">Weather in this city!</p>
-          <div class="box" id="weather-one"></div>
-          <div class="box" id="weather-two"></div>
-          <div class="box" id="weather-three"></div>
-          <div class="box" id="weather-four"></div>
-          <div class="box" id="weather-five"></div>
+        <!-- Event list -->
+        <div class="column is-5 is-offset-1" id="events">
+
+          <p class="mb-6">You can scroll down directly on the events to reveal more!</p>
+
+          <ul>
+            <!-- Each Event-->
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-one"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-two"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-three"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-four"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-five"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-six"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-seven"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eight"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-nine"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-ten"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eleven"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-twelve"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-thirteen"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-fourteen"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-fifteen"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-sixteen"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-seventeen"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eighteen"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-nineteen"></li>
+            <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-twenty"></li>
+          </ul>
         </div>
-      </div>
-
-      <!-- Event list -->
-      <div class="column is-5 is-offset-1" id="events">
-
-        <p class="mb-6">You can scroll down directly on the events to reveal more!</p>
-
-        <ul>
-          <!-- Each Event-->
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-one"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-two"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-three"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-four"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-five"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-six"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-seven"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eight"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-nine"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-ten"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eleven"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-twelve"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-thirteen"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-fourteen"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-fifteen"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-sixteen"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-seventeen"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-eighteen"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-nineteen"></li>
-          <li class="has-background-dark p-4 has-text-centered-mobile mt-6" id="event-twenty"></li>
-        </ul>
       </div>
     </div>
   </main>
@@ -94,6 +95,11 @@
       </span>
     </span>
   </footer>
+
+  <section class="hero is-large" id="orange">
+    <div class="hero-body">
+    </div>
+  </section>
 
 </body>
 

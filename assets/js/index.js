@@ -27,7 +27,9 @@ function getLocation () {
     //now new variable for complete URL
     var completeUrlStringG = googleMapsGeocodeApiLink + locationUrlString + googleMapsGeocodeApiKey
     console.log(completeUrlStringG);
-    apiFetchGeo(completeUrlStringG)
+    apiFetchGeo(completeUrlStringG);
+    $("#below-submit").css("display", "block");
+    $(".hero").css("display", "none");
   })
 };
 
