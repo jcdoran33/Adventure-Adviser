@@ -1,5 +1,25 @@
 {
   "dependencies": {
-    "dotenv": "^16.0.1"
-  }
+    "dotenv": "^16.0.1",
+    "requirejs": "^2.3.6"
+  },
+  "name": "adventure-adviser",
+  "description": "Adventure Advisor",
+  "version": "1.0.0",
+  "main": "index_test.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcdoran33/Entertain-Me-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcdoran33/Entertain-Me-Project/issues"
+  },
+  "homepage": "https://github.com/jcdoran33/Entertain-Me-Project#readme"
 }

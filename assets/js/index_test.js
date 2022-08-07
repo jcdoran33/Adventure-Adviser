@@ -1,4 +1,17 @@
 //global variables
+require("dotenv").config();
+// var requirejs = require('requirejs');
+
+// requirejs.config({
+//     //Pass the top-level main.js/index.js require
+//     //function to requirejs so that node modules
+//     //are loaded relative to the top-level JS file.
+//     nodeRequire: require
+// });
+
+
+// console.log("Test: "+test.parsed);
+console.log(process.env);
 //var for the location search field input
 var searchField = document.querySelector("#location");
 //time variables
@@ -9,8 +22,15 @@ console.log(aWeekFromNow)
 
 //var to store the google maps api link
 var googleMapsGeocodeApiLink = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-var googleMapsGeocodeApiKey = "&key=AIzaSyBjwEk24WO-R9Ad8hxTNUM4BvsIzH8fQDw";
-var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?startDateTime="+todaysDate+"T00:00:00Z&endDateTime="+aWeekFromNow+"T00:00:00Z&apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong="
+//
+//NEW
+const googleMapsGeocodeApiKey = process.env.GOOGLE_MAPS_API_KEY;
+const ticketmasterApiKey = process.env.TICKETMASTER_API_KEY;
+console.log("Google maps api key: ", googleMapsGeocodeApiKey);
+console.log("Ticketmaster PAI key: ", ticketmasterApiKey);
+// var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?startDateTime="+todaysDate+"T00:00:00Z&endDateTime="+aWeekFromNow+"T00:00:00Z&apikey=&latlong="
+//NEW
+var ticketMasterApiLink = "https://app.ticketmaster.com/discovery/v2/events.json?startDateTime="+todaysDate+"T00:00:00Z&endDateTime="+aWeekFromNow+"T00:00:00Z&apikey="+ticketmasterApiKey+"&latlong="
 // og ticketmaster URL https://app.ticketmaster.com/discovery/v2/events.json?apikey=dF6HrGys01GsTDqeXhdq6gQ4GvGoHrdF&latlong=
 
 var map = document.getElementById("map");
